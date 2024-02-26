@@ -22,30 +22,11 @@
             animation: heartbeat 1s infinite alternate;
         }
 
-        /* Adjusted styles for the message container */
-        #message-container {
-            background-color: plum;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.455);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            max-width: 90%;
-            margin: auto;
-            overflow: auto;
-            height: auto;
-        }
-
-        #message {
-            width: 100%;
-            padding: 20px; /* Increased padding for better spacing */
-            box-sizing: border-box;
-            font-size: 1.2rem; /* Adjusted font size for better readability */
-            max-width: 100%;
-        }
-
         /* Style for the music player */
         #music-player {
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
             text-align: center;
             padding: 10px;
@@ -53,8 +34,29 @@
         }
 
         #music-player audio {
+            width: 100%; /* Set width to 100% for better responsiveness */
+            height: 30px; /* Set your desired height */
+        }
+
+        /* Adjusted styles for the message container */
+        #message-container {
+            background-color: plum;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.455);
+            display: flex;
+            flex-direction: column;
+            justify-content: left; /* Set justify content to the left */
+            max-width: 90%;
+            margin: auto;
+            height: 400px; /* Set a fixed height */
+            position: relative;
+        }
+
+        #message {
             width: 100%;
-            height: 30px;
+            padding: 20px; /* Increased padding for better spacing */
+            box-sizing: border-box;
+            font-size: 10px; /* Set font size to 10px */
+            max-width: 100%;
         }
     </style>
 </head>
