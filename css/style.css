@@ -1,17 +1,4 @@
-/* Additional CSS to ensure animation works */
-@keyframes heartbeat {
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.2);
-    }
-}
-
-.fa-heart.fa-beat {
-    animation: heartbeat 1s infinite alternate;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 body {
     font-family: 'Inter', sans-serif;
@@ -44,6 +31,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     overflow: hidden;
     transition: height 1.5s ease;
+    position: relative; /* Added position relative */
 }
 
 #message {
@@ -52,12 +40,34 @@ h1, h2, h3, h4, h5, h6 {
     padding: 15px;
 }
 
+/* Additional CSS for heartbeat animation */
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.fa-heart.fa-beat {
+    animation: heartbeat 1s infinite alternate;
+}
+
+/* Style for the music player */
 #music-player {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #f0f0f0;
-    padding: 10px;
     text-align: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+/* Additional styling for the made by section */
+p.made-by {
+    position: fixed;
+    bottom: 5px;
+    right: 20px;
 }
