@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Letter For My SUGAR🍬❤️</title>
+    <title>A Letter From SUGAR🍬❤️</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -25,25 +25,33 @@
 
         /* Style for the music player */
         #music-player {
-            position: fixed;
+            position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #f0f0f0;
-            padding: 10px;
             text-align: center;
+            padding: 10px;
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Play the music while you are reading</h1>
-    </header>
-
     <div class="container">
-        <div id="message-container" style="display: none; height: 0;">
+        <header>
+            <h1>Your Header Goes Here</h1>
+        </header>
+
+        <div id="message-container" style="display: none; height: 0; position: relative;">
             <p id="message"></p>
+
+            <!-- Music Player -->
+            <div id="music-player">
+                <audio controls>
+                    <source src="Audio/Colbie Caillat - Fallin' For You (Lyrics).mp3" type="audio/mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+            </div>
         </div>
 
         <div class="heart-container" style="margin-top: 0;">
@@ -53,16 +61,10 @@
 
     <p style="position: fixed; bottom: 5px; right: 20px;">Made by C12H22O11 ❤️</p>
 
-    <!-- Music Player -->
-    <div id="music-player">
-        <audio controls>
-            <source src="AUDIO/Colbie Caillat - Fallin' For You (Lyrics).mp3" type="audio/mp3">
-            Your browser does not support the audio tag.
-        </audio>
-    </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.2/markdown-it.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
+</html>
 
 </html>
