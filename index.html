@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Letter From SUGAR🍬❤️</title>
+    <title>A Letter For MY SUGAR🍬❤️</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -42,26 +42,27 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            overflow: hidden;
-            transition: height 1.5s ease;
-            position: relative;
+            overflow: auto; /* Allow scrolling */
             max-width: 90%;
             margin: auto;
+            height: 70vh; /* Set a maximum height for better control */
         }
 
         #message {
             width: 100%;
             padding: 15px;
             box-sizing: border-box;
-            font-size: 10px; /* Adjust the font size as needed */
+            font-size: 14px;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div id="message-container" style="display: none; height: 0;">
-            <p id="message"></p>
+        <div id="message-container" style="display: none;">
+            <p id="message">
+                <!-- Your long message content here -->
+            </p>
 
             <!-- Music Player -->
             <div id="music-player">
