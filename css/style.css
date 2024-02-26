@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
+    margin: 0; /* Remove default margin */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-width: 95%; /* Adjusted the maximum width */
+    max-width: 90%; /* Adjusted the maximum width */
     margin: auto;
     overflow: auto; /* Add overflow to handle overflow content */
     height: auto; /* Set height to auto to adjust dynamically */
@@ -37,10 +38,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #message {
-    width: 90%;
-    padding: 15px;
+    width: 100%; /* Adjusted width for better responsiveness */
+    padding: 20px; /* Increased padding for better spacing */
     box-sizing: border-box;
-    font-size: 1.5vw; /* Use vw (viewport width) for responsive font size */
+    font-size: 1.2rem; /* Adjusted font size for better readability */
     max-width: 100%; /* Set max-width to 100% for better responsiveness */
 }
 
@@ -65,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%; /* Set width to 100% for better responsiveness */
     text-align: center;
-    padding: 4px;
+    padding: 10px;
     background-color: #f0f0f0;
 }
 
