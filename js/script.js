@@ -5,10 +5,18 @@ function loadMessage(md) {
         .then(response => response.text())
         .then(data => {
             message.innerHTML = md.render(data);
+            adjustContainerHeight(); // Call the function to adjust container height
         })
         .catch(error => {
             message.innerHTML = "An error occurred while fetching the message";
         });
+}
+
+function adjustContainerHeight() {
+    const msgContainer = document.querySelector("#message-container");
+    const autoHeight = msgContainer.scrollHeight + 20; // 20 extra padding
+
+    msgContainer.style.height = autoHeight + "px";
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -18,9 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const heart = document.querySelector("#solid-heart");
     const heart_container = document.querySelector(".heart-container");
-    
-    const msg_container = document.querySelector("#message-container");
-    
+
     const md = window.markdownit({html: true});
 
     loadMessage(md);
@@ -30,11 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         tempdata.did_open = true;
-        
-        msg_container.style.display = "block";
+
+        const msgContainer = document.querySelector("#message-container");
+        msgContainer.style.display = "block";
         heart_container.style.marginTop = "-1.5%";
-        
-        const auto_css_height = msg_container.scrollHeight + 20; // 20 extra padding
-        msg_container.style.height = auto_css_height + "px";
+
+        adjustContainerHeight();
     });
 });
