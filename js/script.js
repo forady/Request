@@ -11,7 +11,7 @@ function loadMessage(md) {
         });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let tempdata = {
         "did_open": false
     }
@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const msg_container = document.querySelector("#message-container");
     
-    const md = window.markdownit({html: true});
+    const md = window.markdownit({ html: true });
 
     loadMessage(md);
 
-    heart.addEventListener("click", function() {
+    heart.addEventListener("click", function () {
         if (tempdata.did_open) {
             return;
         }
@@ -36,6 +36,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const auto_css_height = msg_container.scrollHeight + 20; // 20 extra padding
         msg_container.style.height = auto_css_height + "px";
-    });
 
+        // Play the audio when the heart is clicked
+        const audio = document.querySelector("audio");
+        if (audio) {
+            audio.play();
+        }
+    });
 });
+
