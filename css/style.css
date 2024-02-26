@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 95%; /* Adjusted the maximum width */
     margin: auto;
     overflow: auto; /* Add overflow to handle overflow content */
-    transition: height 1.5s ease;
+    height: auto; /* Set height to auto to adjust dynamically */
     position: relative; /* Added position relative */
 }
 
@@ -41,6 +41,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 15px;
     box-sizing: border-box;
     font-size: 1.5vw; /* Use vw (viewport width) for responsive font size */
+    max-width: 100%; /* Set max-width to 100% for better responsiveness */
 }
 
 /* Additional CSS for heartbeat animation */
@@ -62,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 75%;
+    width: 100%; /* Set width to 100% for better responsiveness */
     text-align: center;
     padding: 4px;
     background-color: #f0f0f0;
