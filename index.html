@@ -22,11 +22,30 @@
             animation: heartbeat 1s infinite alternate;
         }
 
+        /* Adjusted styles for the message container */
+        #message-container {
+            background-color: plum;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.455);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 90%;
+            margin: auto;
+            overflow: auto;
+            height: auto;
+        }
+
+        #message {
+            width: 100%;
+            padding: 20px; /* Increased padding for better spacing */
+            box-sizing: border-box;
+            font-size: 1.2rem; /* Adjusted font size for better readability */
+            max-width: 100%;
+        }
+
         /* Style for the music player */
         #music-player {
-            position: absolute;
-            bottom: 0;
-            left: 0;
             width: 100%;
             text-align: center;
             padding: 10px;
@@ -34,30 +53,8 @@
         }
 
         #music-player audio {
-            width: 100%; /* Set width to 100% for better responsiveness */
-            height: 30px; /* Set your desired height */
-        }
-
-        /* Adjusted styles for the message container */
-        #message-container {
-            background-color: plum;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.455);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            max-width: 95%;
-            margin: auto;
-            overflow: auto; /* Add overflow to handle overflow content */
-            height: auto; /* Set height to auto to adjust dynamically */
-        }
-
-        #message {
-            width: 90%;
-            padding: 15px;
-            box-sizing: border-box;
-            font-size: 1.5vw; /* Use vw (viewport width) for responsive font size */
-            max-width: 100%; /* Set max-width to 100% for better responsiveness */
+            width: 100%;
+            height: 30px;
         }
     </style>
 </head>
