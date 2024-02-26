@@ -1,4 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+/* Additional CSS to ensure animation works */
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.fa-heart.fa-beat {
+    animation: heartbeat 1s infinite alternate;
+}
 
 body {
     font-family: 'Inter', sans-serif;
@@ -39,16 +52,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 15px;
 }
 
-/* Additional CSS for heartbeat animation */
-@keyframes heartbeat {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.2);
-    }
-}
-
-.fa-heart.fa-beat {
-    animation: heartbeat 1s infinite alternate;
+#music-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
 }
