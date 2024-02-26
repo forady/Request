@@ -29,15 +29,18 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow: hidden;
+    max-width: 95%; /* Adjusted the maximum width */
+    margin: auto;
+    overflow: auto; /* Add overflow to handle overflow content */
     transition: height 1.5s ease;
     position: relative; /* Added position relative */
 }
 
 #message {
     width: 90%;
-    height: 90%;
     padding: 15px;
+    box-sizing: border-box;
+    font-size: 1.5vw; /* Use vw (viewport width) for responsive font size */
 }
 
 /* Additional CSS for heartbeat animation */
