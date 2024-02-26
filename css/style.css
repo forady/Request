@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .heart-container {
     display: flex;
-    justify-content: center;
+    justify-content: left; /* Adjusted justify-content to left */
     align-items: center;
     flex-direction: column;
 }
@@ -27,12 +27,12 @@ h1, h2, h3, h4, h5, h6 {
     background-color: plum;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.455);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left; /* Adjusted justify-content to left */
+    align-items: left; /* Adjusted align-items to left */
     flex-direction: column;
     max-width: 90%; /* Adjusted the maximum width */
     margin: auto;
-    overflow: auto; /* Add overflow to handle overflow content */
+    /* Removed overflow property */
     height: auto; /* Set height to auto to adjust dynamically */
     position: relative; /* Added position relative */
 }
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%; /* Adjusted width for better responsiveness */
     padding: 20px; /* Increased padding for better spacing */
     box-sizing: border-box;
-    font-size: 1.2rem; /* Adjusted font size for better readability */
+    font-size: 10px; /* Set font size to 10px */
     max-width: 100%; /* Set max-width to 100% for better responsiveness */
 }
 
