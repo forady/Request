@@ -34,8 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
         msg_container.style.display = "flex";
         heart_container.style.marginTop = "-1.5%";
         
-        const auto_css_height = msg_container.scrollHeight + 20; // 20 extra padding
-        msg_container.style.height = auto_css_height + "px";
+        // Remove the following lines to disable setting a specific height
+        // const auto_css_height = msg_container.scrollHeight + 20; // 20 extra padding
+        // msg_container.style.height = auto_css_height + "px";
     });
 
 });
