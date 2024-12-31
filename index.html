@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* Additional CSS to ensure animation works */
         @keyframes heartbeat {
             from {
                 transform: scale(1);
             }
+
             to {
                 transform: scale(1.2);
             }
@@ -19,9 +21,9 @@
 
         .fa-heart.fa-beat {
             animation: heartbeat 1s infinite alternate;
-            cursor: pointer; /* Makes the heart look clickable */
         }
 
+        /* Style for the music player */
         #music-player {
             position: absolute;
             bottom: 0;
@@ -33,27 +35,28 @@
         }
 
         #music-player audio {
-            width: 100%;
-            height: 30px;
+            width: 100%; /* Set width to 100% for better responsiveness */
+            height: 30px; /* Set your desired height */
         }
 
+        /* Adjusted styles for the message container */
         #message-container {
             background-color: plum;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.455);
-            display: none; /* Initially hidden */
-            flex-direction: column;
+            display: flex;
             justify-content: left;
             max-width: 90%;
             margin: auto;
-            height: 400px;
+            height: auto;
             position: relative;
+            display: none;
         }
 
         #message {
             width: 100%;
             padding: 20px;
             box-sizing: border-box;
-            font-size: 16px;
+            font-size: 10px;
             max-width: 100%;
         }
     </style>
@@ -63,14 +66,13 @@
     <div class="container">
         <div id="message-container">
             <p id="message">
-                Dear Sugar, <br>
-                You are the sweetest part of my day, my constant source of joy. This letter is a little piece of my heart, 
-                a reminder of how special you are. Listen to the song and feel the rhythm of my heartbeat, which beats only for you. ❤️
+                <!-- Your long message content will appear here -->
             </p>
 
+            <!-- Music Player -->
             <div id="music-player">
                 <audio id="audio" controls>
-                    <source src="Audio/Taylor Swift - Begin Again.mp3" type="audio/mp3">
+                    <source src="Audio/Begin Again - Taylor Swift.mp3" type="audio/mp3">
                     Your browser does not support the audio tag.
                 </audio>
             </div>
@@ -83,23 +85,8 @@
 
     <p style="position: fixed; bottom: 5px; right: 20px;">Made by C12H22O11 ❤️</p>
 
-    <script>
-        const heart = document.getElementById('solid-heart');
-        const messageContainer = document.getElementById('message-container');
-        const audio = document.getElementById('audio');
-
-        heart.addEventListener('click', () => {
-            // Toggle the visibility of the message container
-            if (messageContainer.style.display === 'none') {
-                messageContainer.style.display = 'flex';
-                audio.play(); // Start playing the music
-            } else {
-                messageContainer.style.display = 'none';
-                audio.pause(); // Pause the music
-                audio.currentTime = 0; // Reset the music
-            }
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.2/markdown-it.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
