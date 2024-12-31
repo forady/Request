@@ -9,10 +9,12 @@ function loadMessage(md) {
             return response.text();
         })
         .then(data => {
-            message.innerHTML = md.render(data);
+            message.innerHTML = md.render(data); // Render markdown content
+            console.log("Message loaded successfully");
         })
-        .catch(() => {
+        .catch(error => {
             message.innerHTML = "Sorry, we couldn't load the message. Please try again later.";
+            console.error("Error loading message:", error);
         });
 }
 
@@ -29,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load the message from the text file
     loadMessage(md);
 
-    // Add click event listener to the heart icon
     heart.addEventListener("click", function () {
         if (!tempData.did_open) {
             tempData.did_open = true;
@@ -42,8 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Play the music
             if (audio) {
-                audio.play().catch(() => {
-                    console.warn("Unable to play audio automatically. User interaction may be required.");
+                console.log("Playing music...");
+                audio.play().catch((err) => {
+                    console.error("Error playing music:", err);
                 });
             }
         }
