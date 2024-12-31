@@ -2,41 +2,50 @@ function loadMessage(md) {
     const message = document.querySelector("#message");
 
     fetch("message.txt")
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+        })
         .then(data => {
             message.innerHTML = md.render(data);
         })
-        .catch(error => {
-            message.innerHTML = "An error occurred while fetching the message";
+        .catch(() => {
+            message.innerHTML = "Sorry, we couldn't load the message. Please try again later.";
         });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    let tempdata = {
-        "did_open": false
-    }
+document.addEventListener("DOMContentLoaded", function () {
+    const tempData = { did_open: false };
 
     const heart = document.querySelector("#solid-heart");
-    const heart_container = document.querySelector(".heart-container");
-    
-    const msg_container = document.querySelector("#message-container");
-    
-    const md = window.markdownit({html: true});
+    const heartContainer = document.querySelector(".heart-container");
+    const msgContainer = document.querySelector("#message-container");
+    const audio = document.querySelector("#audio");
 
+    const md = window.markdownit({ html: true });
+
+    // Load the message from the text file
     loadMessage(md);
 
-    heart.addEventListener("click", function() {
-        if (tempdata.did_open) {
-            return;
-        }
-        tempdata.did_open = true;
-        
-        msg_container.style.display = "flex";
-        heart_container.style.marginTop = "-1.5%";
-        
-        // Remove the following lines to disable setting a specific height
-        // const auto_css_height = msg_container.scrollHeight + 20; // 20 extra padding
-        // msg_container.style.height = auto_css_height + "px";
-    });
+    // Add click event listener to the heart icon
+    heart.addEventListener("click", function () {
+        if (!tempData.did_open) {
+            tempData.did_open = true;
 
+            // Show the message container
+            msgContainer.style.display = "flex";
+
+            // Adjust the heart container's margin
+            heartContainer.style.marginTop = "-1.5%";
+
+            // Play the music
+            if (audio) {
+                audio.play().catch(() => {
+                    console.warn("Unable to play audio automatically. User interaction may be required.");
+                });
+            }
+        }
+    });
 });
